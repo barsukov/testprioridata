@@ -1,0 +1,7 @@
+= form_tag "/search", method: "get", :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = label_tag :criteria,"Search for ..." ,:class => 'control-label'
+    .controls
+      =text_field_tag :criteria, :class => 'text_field'
+  .form-actions
+    = submit_tag nil, :class => 'btn btn-primary'
