@@ -8,6 +8,7 @@ Testprioridata::Application.routes.draw do
   resources :products
   resources :companies
 
+  resources :searches
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

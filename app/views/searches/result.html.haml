@@ -1,6 +1,12 @@
-.row
-  =link_to 'back to message',new_message_path, :class => 'btn'
-  .row-bottom
-    =get_message_label(@code,@result_message)
-  %p
-    -if @code == 200
+%table.table.table-striped
+  %tr
+    %th
+      Name
+    %th
+      Description
+  -@results.each do |d|
+    %tr
+      %td
+        =d["name"]
+      %td
+        =d["description"]
