@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :company do
+    sequence(:id)
     trait :good_request_company do
       name "company1"
       description "company"

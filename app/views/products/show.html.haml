@@ -1,6 +1,5 @@
 %h2
   =@product.name
-
 %h2
   Ovierview
 %p
@@ -16,20 +15,17 @@
 %table.table.table-striped
   %tr
     %th
-      Description
-    %th
       Stoned date
     %th
       Source description
     %th
       Source url
-  -@product.milestones.each do |element|
-    %tr
-      %td
-        =element["description"]
-      %td
-        ="#{element["stoned_year"]}-#{element["stoned_month"]}-#{element["stoned_day"]}"
-      %td
-        =element["source_description"]
-      %td
-        =element["source_url"]
+  -if @product.milestones
+    -@product.milestones.each do |element|
+      %tr
+        %td
+          ="#{element["stoned_year"]}-#{element["stoned_month"]}-#{element["stoned_day"]}"
+        %td
+          =element["source_description"]
+        %td
+          =element["source_url"]

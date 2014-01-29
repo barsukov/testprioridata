@@ -8,25 +8,25 @@ class SearchesController < ApplicationController
         @result = JSON.parse crunch_base_response
         results = @result['results']
         @company_results = []
-        @product_results = []
+        @product_resu
+lts = []
         #in production code of course these need to be a separate and acces by ajax request and represent by a good view interface on the client side
         #but I do not want to spent time for it on this simple task and represetnt both results on one page in a separate table
         if results
           results.each_with_index do |element, index|
+            element["id"] = index
+            element["img_min_url"] = "#{Constants::CRUNCH_URL}#{element.try(:[],"image").try(:[],"available_sizes").try(:first).try(:last)}"
             if element["namespace"] == "company"
-              @company_results << element
+              @company_results << Company.create_by_crunch_based(element)
             else if element["namespace"] == "product"
-              img_min_url= "http://www.crunchbase.com/#{element.try(:[],"image").try(:[],"available_sizes").try(:first).try(:last)}"
-              @product_results << Product.new(id: index ,name: element["name"],
-                                              description: element["description"],
-                                              img_mini_url: img_min_url,
-                                              permalink: element["permalink"])
+              @product_results << Product.create_by_crunch_based(element)
+            end
+          end
           end
         end
-
-          end
-        end
-      render "result"
-  end
+      end
+      respond_to do |format|
+        format.html{ render "result"}
+      end
   end
 end

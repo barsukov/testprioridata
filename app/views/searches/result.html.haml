@@ -1,6 +1,8 @@
 %h2
   Products
-=render :partial => 'searches/products',:products => @product_results
+-unless @product_results.empty?
+  =render :partial => 'searches/products',:products => @product_results
 %h2
   Companies
-=render :partial => 'searches/companies',:products => @company_results
+-unless @company_results.empty?
+  =render :partial => 'searches/companies',:companies => @company_results

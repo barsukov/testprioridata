@@ -27,7 +27,7 @@ describe SearchesController do
         controller.pusher = Pusher.new
       end
       it "create message with invalid params"  do
-        post :create, {query: bad_company.name }
+        post 'create',:params => {query: bad_company.name }
 
         response.should be_success
         expect(response.status).to eq 200

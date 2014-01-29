@@ -21,7 +21,7 @@ module Testprioridata
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    config.autoload_paths += %W(#{config.root}/lib/pusher)
+    config.autoload_paths += %W(#{config.root}/lib/pusher #{config.root}/lib/)
 
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.

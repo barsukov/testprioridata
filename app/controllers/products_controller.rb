@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
       @product.crunch_base_url = @result["crunchbase_url"]
       @product.milestones  = @result["milestones"]
       @product.name =   @result["name"]
-      @product.img_max_url= "http://www.crunchbase.com/#{@result.try(:[],"image").try(:[],"available_sizes").try(:last).try(:last)}"
+      @product.img_max_url= "#{Constants::CRUNCH_URL}#{@result.try(:[],"image").try(:[],"available_sizes").try(:last).try(:last)}"
       @product.overview = @result["overview"]
     end
   end

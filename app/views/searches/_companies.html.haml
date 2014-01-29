@@ -4,9 +4,14 @@
       Name
     %th
       Description
+    %th
+      Image
   -@company_results.each do |company|
     %tr
       %td
-        =link_to company["name"],companies_path(company)
+        =link_to company.name,company_path(company.id,name: company.permalink)
       %td
-        =company["description"]
+        =company.description
+      %td
+        =image_tag(company.img_mini_url)
+

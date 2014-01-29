@@ -1,16 +1,14 @@
-require 'rspec'
+# encoding: utf-8
+require 'spec_helper'
+describe CompaniesController do
 
-describe CompanyController do
-    let(:good_company) { create :good_company }
-
-
-describe "POST create" do
-      context "send request for one company" do
-      it 'should do something' do
-
-        #To change this template use File | Settings | File Templates.
-        true.should == false
-      end
-      end
+    before(:each) do
+      #Inject the pusher for call not real API for test
+      #the same procudure we need when we do not need to call remote API in test.
+      controller.pusher = FakePusher.new
     end
-  end
+
+    it_behaves_like "a model controller" do
+      let(:model) { build :good_company }
+    end
+end

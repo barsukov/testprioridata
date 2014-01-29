@@ -1,0 +1,35 @@
+%h2
+  =@company.name
+%h2
+  Ovierview
+%p
+  =@company.overview.html_safe
+%h2
+  Crunch base URL
+%p
+  =link_to nil,@company.crunch_base_url
+%p
+  =image_tag @company.img_max_url
+%h2
+  People
+%table.table.table-striped
+  %tr
+    %th
+      Title
+    %th
+      First name
+    %th
+      Last name
+    %th
+      Link
+  -if @company.people
+    -@company.people.each do |element|
+      %tr
+        %td
+          =element["title"]
+        %td
+          =element.try(:[],"person").try(:[],"first_name")
+        %td
+          =element.try(:[],"person").try(:[],"last_name")
+        %td
+          =link_to nil,"http://www.crunchbase.com/person/#{element.try(:[],"person").try(:[],"permalink")}"
