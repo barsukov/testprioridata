@@ -1,0 +1,12 @@
+%table.table.table-striped
+  %tr
+    %th
+      Name
+    %th
+      Description
+  -@company_results.each do |company|
+    %tr
+      %td
+        =link_to company["name"],companies_path(company)
+      %td
+        =company["description"]

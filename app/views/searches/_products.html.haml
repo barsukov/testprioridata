@@ -1,0 +1,12 @@
+%table.table.table-striped
+  %tr
+    %th
+      Name
+    %th
+      Description
+  -@product_results.each do |product|
+    %tr
+      %td
+        =link_to product.name,product_path(product.id,name:product.permalink)
+      %td
+        =image_tag(product.img_mini_url)

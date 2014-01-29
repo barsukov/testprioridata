@@ -6,6 +6,7 @@ class BaseModel
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
+  attr_accessor :name,:id,:img_mini_url,:img_max_url,:overview ,:permalink
   def initialize(attributes={})
     if attributes
       attributes.each do |name, value|

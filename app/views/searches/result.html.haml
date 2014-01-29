@@ -1,12 +1,6 @@
-%table.table.table-striped
-  %tr
-    %th
-      Name
-    %th
-      Description
-  -@results.each do |d|
-    %tr
-      %td
-        =d["name"]
-      %td
-        =d["description"]
+%h2
+  Products
+=render :partial => 'searches/products',:products => @product_results
+%h2
+  Companies
+=render :partial => 'searches/companies',:products => @company_results
