@@ -1,4 +1,13 @@
+== USAGE
+    RUBY ~> 2.0
+    BUNDLER
+    RAILS 4
+    firstly bundle install
+    for test you need to run spec
+    for server rails s command after install gems
 == README
+
+
   Allright:), I have implement every tasks bellow and tests for them some details I need to explain and of course
   Why I do in this way
   firstly I have not used the active record gem and any db storages, because  a feature list has not request about
