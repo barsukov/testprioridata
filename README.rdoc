@@ -5,7 +5,9 @@
   save and retrieve data
   Because I have not a lot of time ,I do not separate the controllers of search for ajax
   The second part I explain about pagination these keys add some dificults to decisions, I used the gem
-  will paginate and add support array wihout active record into applicaion_helper.rb file.
+  will paginate and add support array wihout active record into applicaion_helper.rb file. Because I do not get the values
+  by request more then ten (I have use word "Iphone" to test), I set the pagiination per page near the 3 value. you can change it
+  in a file
 
   And the reaseon of so a lot of code on one controller, for good pagination we need to separate it to another
   controllers and results view.
@@ -14,10 +16,10 @@
   I wrote the test by spec but of course these is not enough to cover all functionality.
 
   I hope you found some intresting decisions, like DI with remote pusher and factory methods to do my code more cleaner
-  If you will find some bugs notice me about it :) thanks
+  If you will find some bugs notice me about it :)
 
 
-  THanks
+  THanks for your time to review
 
 == TASK
     Skill assessment task for a ROR developer position
