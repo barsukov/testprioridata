@@ -10,3 +10,5 @@
         =link_to product.name,product_path(product.id,name:product.permalink)
       %td
         =image_tag(product.img_mini_url)
+
+=will_paginate @product_results,:param_name => :product_page

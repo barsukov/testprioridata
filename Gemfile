@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'state_machine'
 gem 'rest-client'
 gem 'simple_form'
+gem 'will_paginate'
 
 group :test do
   gem 'rspec', :require => false

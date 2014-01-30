@@ -175,6 +175,7 @@ GEM
     webmock (1.17.1)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
+    will_paginate (3.0.5)
     wrong (0.7.1)
       diff-lcs (~> 1.2.5)
       predicated (~> 0.2.6)
@@ -206,4 +207,5 @@ DEPENDENCIES
   uglifier
   unicorn-rails
   webmock
+  will_paginate
   wrong

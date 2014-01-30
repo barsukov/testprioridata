@@ -1,28 +1,50 @@
 == README
+  Allright:), I have implement every tasks bellow and tests for them some details I need to explain and of course
+  Why I do in this way
+  firstly I have not used the active record gem and any db storages, because  a feature list has not request about
+  save and retrieve data
+  Because I have not a lot of time ,I do not separate the controllers of search for ajax
+  The second part I explain about pagination these keys add some dificults to decisions, I used the gem
+  will paginate and add support array wihout active record into applicaion_helper.rb file.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  And the reaseon of so a lot of code on one controller, for good pagination we need to separate it to another
+  controllers and results view.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  I wrote the test by spec but of course these is not enough to cover all functionality.
+
+  I hope you found some intresting decisions, like DI with remote pusher and factory methods to do my code more cleaner
+  If you will find some bugs notice me about it :) thanks
+
+
+  THanks
+
+== TASK
+    Skill assessment task for a ROR developer position
+    in Priori Data
+    The goal is to assess your abilities in working with the Ruby on Rails framework and Ruby.
+    Task
+    The task is to create simple web application that wraps around the CrunchBase API to display
+    very basic information about the Companies and Products listed in their database.
+    ● Create an account and request an API key from CrunchBase
+    ● Create a rails application to satisfy the following user stories:
+    ○ As a user I can search the Crunchbase database and only receive results with
+    Companies and Products listed in results
+    ■ Results should be divided and displayed in 2 different result sets one for
+    Companies and one for Products
+    ■ Displayed results should contain ­ name, description(companies only) and a
+    small image
+    ■ User can paginate through the resultsets viewing 10 result items at the
+    time.
+    ○ As a user after submitting a search form when I click on Company search result
+    list items I am taken to detailed page where I can see a Company overview,
+    crunchbase_url, list of company people and big company image.
+    ■ people list contains title, first_name, last_name and link to crunchbase
+    resource ex. (http://www.crunchbase.com/person/kati­levoranta)
+    ○ As a user after submitting a search form when I click on Product search result
+    list items I am taken to detailed page where I can see a Product overview,
+    crunchbase_url, list of milestones and big product image .
+    ■ milestone list contains description, stoned_date, source_description and
+    source_url.
+    Delivery
+    ● Use the github to store the application s
